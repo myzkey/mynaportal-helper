@@ -29,19 +29,19 @@ pnpm install
 Add the following to the `tailwind.config.ts` file.
 
 ```ts
-import baseConfig from '@extension/tailwindcss-config';
-import { withUI } from '@extension/ui';
+import baseConfig from '@extension/tailwindcss-config'
+import { withUI } from '@extension/ui'
 
 export default withUI({
   ...baseConfig,
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-});
+})
 ```
 
 Add the following to the `index.tsx` file.
 
 ```tsx
-import '@extension/ui/lib/global.css';
+import '@extension/ui/lib/global.css'
 ```
 
 ## Add Custom Component
@@ -49,29 +49,29 @@ import '@extension/ui/lib/global.css';
 Add the following to the `lib/components/index.ts` file.
 
 ```tsx
-export * from './CustomComponent.js';
+export * from './CustomComponent.js'
 ```
 
 Add the following to the `lib/components/CustomComponent.tsx` file.
 
 ```tsx
-import { ComponentPropsWithoutRef } from 'react';
-import { cn } from '@/lib/utils.js';
+import { ComponentPropsWithoutRef } from 'react'
+import { cn } from '@/lib/utils.js'
 
-type CustomComponentProps = ComponentPropsWithoutRef<'section'>;
+type CustomComponentProps = ComponentPropsWithoutRef<'section'>
 
 export function CustomComponent({ children, ...props }: CustomComponentProps) {
-  return <section {...props}>{children}</section>;
+  return <section {...props}>{children}</section>
 }
 ```
 
 ## Usage
 
 ```tsx
-import { CustomComponent } from '@extension/ui';
+import { CustomComponent } from '@extension/ui'
 
 export default function Page() {
-  return <CustomComponent>Hi, I'm a custom component.</CustomComponent>;
+  return <CustomComponent>Hi, I'm a custom component.</CustomComponent>
 }
 ```
 
@@ -129,10 +129,10 @@ This configuration file is from the manual guide. You can refer to the manual gu
 `Configure tailwind.config.js`](https://ui.shadcn.com/docs/installation/manual))
 
 ```ts
-import deepmerge from 'deepmerge';
-import type { Config } from 'tailwindcss';
-import { fontFamily } from 'tailwindcss/defaultTheme';
-import tailwindAnimate from 'tailwindcss-animate';
+import deepmerge from 'deepmerge'
+import type { Config } from 'tailwindcss'
+import { fontFamily } from 'tailwindcss/defaultTheme'
+import tailwindAnimate from 'tailwindcss-animate'
 
 export function withUI(tailwindConfig: Config): Config {
   return deepmerge(
@@ -140,7 +140,7 @@ export function withUI(tailwindConfig: Config): Config {
     deepmerge(tailwindConfig, {
       content: ['./node_modules/@extension/ui/lib/**/*.{tsx,ts,js,jsx}'],
     }),
-  );
+  )
 }
 
 const shadcnConfig = {
@@ -214,7 +214,7 @@ const shadcnConfig = {
     },
   },
   plugins: [tailwindAnimate],
-};
+}
 ```
 
 4. Edit `global.css` in `lib` folder
@@ -228,7 +228,8 @@ file. ([`Configure styles`](https://ui.shadcn.com/docs/installation/manual))
 @tailwind utilities;
 
 @layer base {
-  :host, :root {
+  :host,
+  :root {
     --background: 0 0% 100%;
     --foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
@@ -303,7 +304,7 @@ Edit the `index.ts` file in the `packages/ui` directory to export the shadcn ui 
 
 ```ts
 //...
-export * from './lib/components/ui/button';
+export * from './lib/components/ui/button'
 ```
 
 7. Apply global.css
