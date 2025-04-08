@@ -1,0 +1,38 @@
+{
+  "name": "keywords-extractor",
+  "version": "1.0.0",
+  "description": "テキスト抽出とキーワード分析スクリプト",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint src/**/*.ts",
+    "start": "tsc && ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean:output": "rm -rf output"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.4.7",
+    "openai": "^4.89.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.10",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
+    "eslint": "^8.52.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": [
+    "keyword-extraction",
+    "openai",
+    "web-scraping",
+    "text-analysis"
+  ],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,25 @@
+{
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.detectIndentation": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/.next/**": true,
+    "**/public/**": true,
+    "**/out/**": true,
+    "**/screenshots/**": true,
+    "**/build/**": true,
+    "**/videos/**": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

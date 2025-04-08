@@ -1,0 +1,10 @@
+{
+  "extensionDescription": {
+    "description": "Extension description",
+    "message": "非公式のマイナポータルを使いやすくするツール。マイナポータルをより使いやすくするために検索機能を使いやすくしました。"
+  },
+  "extensionName": {
+    "description": "Extension name",
+    "message": "【非公式】マイナポータルヘルパー"
+  }
+}

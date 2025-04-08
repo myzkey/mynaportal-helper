@@ -1,0 +1,10 @@
+{
+  "extensionDescription": {
+    "description": "Extension description",
+    "message": "A tool to make Mynaportal easier to use"
+  },
+  "extensionName": {
+    "description": "Extension name",
+    "message": "【Unofficial】Mynaportal Helper"
+  }
+}
