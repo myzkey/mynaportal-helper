@@ -1,10 +1,10 @@
-import { resolve } from 'node:path';
-import { makeEntryPointPlugin } from '@extension/hmr';
-import { withPageConfig } from '@extension/vite-config';
-import { IS_DEV } from '@extension/env';
+import { resolve } from 'node:path'
+import { makeEntryPointPlugin } from '@extension/hmr'
+import { withPageConfig } from '@extension/vite-config'
+import { IS_DEV } from '@extension/env'
 
-const rootDir = resolve(import.meta.dirname);
-const srcDir = resolve(rootDir, 'src');
+const rootDir = resolve(import.meta.dirname)
+const srcDir = resolve(rootDir, 'src')
 
 export default withPageConfig({
   resolve: {
@@ -23,4 +23,4 @@ export default withPageConfig({
     },
     outDir: resolve(rootDir, '..', '..', 'dist', 'content-ui'),
   },
-});
+})

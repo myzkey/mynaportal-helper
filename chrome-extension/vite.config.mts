@@ -1,16 +1,16 @@
-import { resolve } from 'node:path';
-import { defineConfig, type PluginOption } from 'vite';
-import libAssetsPlugin from '@laynezh/vite-plugin-lib-assets';
-import makeManifestPlugin from './utils/plugins/make-manifest-plugin.js';
-import { watchPublicPlugin, watchRebuildPlugin } from '@extension/hmr';
-import { watchOption } from '@extension/vite-config';
-import env, { IS_DEV, IS_PROD } from '@extension/env';
-import { nodePolyfills } from 'vite-plugin-node-polyfills';
+import { resolve } from 'node:path'
+import { defineConfig, type PluginOption } from 'vite'
+import libAssetsPlugin from '@laynezh/vite-plugin-lib-assets'
+import makeManifestPlugin from './utils/plugins/make-manifest-plugin.js'
+import { watchPublicPlugin, watchRebuildPlugin } from '@extension/hmr'
+import { watchOption } from '@extension/vite-config'
+import env, { IS_DEV, IS_PROD } from '@extension/env'
+import { nodePolyfills } from 'vite-plugin-node-polyfills'
 
-const rootDir = resolve(import.meta.dirname);
-const srcDir = resolve(rootDir, 'src');
+const rootDir = resolve(import.meta.dirname)
+const srcDir = resolve(rootDir, 'src')
 
-const outDir = resolve(rootDir, '..', 'dist');
+const outDir = resolve(rootDir, '..', 'dist')
 export default defineConfig({
   define: {
     'process.env': env,
@@ -49,4 +49,4 @@ export default defineConfig({
       external: ['chrome'],
     },
   },
-});
+})
