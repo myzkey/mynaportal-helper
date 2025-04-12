@@ -6,31 +6,17 @@ on:
     branches: [ main, dev ]
 
 jobs:
-  prettier:
-    name: Prettier Check
+  eslint:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: 'pnpm'
+          node-version-file: '.nvmrc'
+          cache: pnpm
 
-      - name: Install pnpm
-        run: npm install -g pnpm@9.6.0
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Run Prettier (Check Mode)
-        id: prettier-check
-        run: |
-          pnpm prettier --check "**/*.{js,jsx,ts,tsx,json}"
-
-      - name: Show Prettier Errors
-        if: failure()
-        run: echo "Some files are not formatted correctly. Please run 'pnpm prettier --write .' locally."
+      - run: pnpm install --frozen-lockfile --prefer-offline
+      - run: pnpm prettier --check "**/*.{js,jsx,ts,tsx,json}"
